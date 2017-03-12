@@ -1,5 +1,9 @@
 <?php
-
+/*
+Name: Victor Alagwu
+Email: victoralagwu@gmail.com(+234(81)70449567)
+Project: MyProjectBox :- Was done as a project when learning Codeigniter using Edwin Daiz Tutorial
+ */
 class Users extends CI_Controller {
 	public function register() {
 
@@ -15,7 +19,8 @@ class Users extends CI_Controller {
 			$this->load->view('layout/main', $data);
 		} else {
 			if ($this->user_model->create_users()) {
-				$this->session->set_flashdata('reg_success', "<script> swal('Welcome','Our new user','success'); </script>");
+				$username = $this->input->post('username');
+				$this->session->set_flashdata('reg_success', "<script> swal('Welcome','Thanks for registering  $username','success'); </script>");
 				redirect('home/index');
 			} else {
 				echo "User Not Created";
@@ -48,7 +53,7 @@ class Users extends CI_Controller {
 				);
 				// echo $user_data;
 				$this->session->set_userdata($user_data);
-				$this->session->set_flashdata('login_success', "<script> swal('Wow','You just login successfully','success'); </script>");
+				$this->session->set_flashdata('login_success', "<script> swal('Wow','Welcome $username','success'); </script>");
 				redirect('home');
 				$data['main_view'] = "admin";
 				$this->load->view('layout/main', $data);
@@ -65,6 +70,49 @@ class Users extends CI_Controller {
 	public function logout() {
 		$this->session->sess_destroy();
 		redirect('home/index');
+	}
+	public function resetRequest() {
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[2]');
+		if ($this->form_validation->run() == false) {
+			$data['main_view'] = 'users/reset';
+			$this->load->view('layout/main', $data);
+			$data = array(
+				'errors' => validation_errors(),
+			);
+			$this->session->set_flashdata($data);
+			// redirect('home');
+		} else {
+			$email = $this->input->post('email');
+			$token = md5(uniqid(rand(), true));
+			$complete = 'No';
+			$data = array(
+				'resetToken' => $token,
+				'resetCompleted' => $complete,
+			);
+
+			$check_mail = $this->user_model->check_email($email);
+			if ($check_mail) {
+				$user_request = $this->user_model->send_reset($email, $data);
+				$this->session->set_flashdata('reg_success', "<script> swal('Congrats','Reset Link Sent to $email','success'); </script>");
+				redirect('home/index');
+			} else {
+				$this->session->set_flashdata('login_fail', "<script> swal('Oops','Email not in our database','error'); </script>");
+				redirect('home/index');
+
+			}
+		}
+
+	}
+	public function resetPassword() {
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]');
+		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|matches[password]');
+		if ($this->form_validation->run() == false) {
+			$data['main_view'] = 'users/resetPassword';
+			$this->load->view('layout/main', $data);
+		} else {
+			$token_link = $_GET['resetPassword'];
+
+		}
 	}
 
 }

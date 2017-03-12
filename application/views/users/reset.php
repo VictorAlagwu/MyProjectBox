@@ -8,19 +8,8 @@
 	</div>
 	<?php endif;?>
 <?php else: ?>
-<!-- Modal -->
-<div class="modal fade" id="addData" tabindex="-1" role="dialog" aria-labelledby="addLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-			<
-			</div>
-		</div>
 
-	</div>
-</div>
-<!-- End of Modal -->
-<h2 class="text-center">Login Form</h2>
+<h2 class="text-center">Request Reset Password Form</h2>
 
 <?php $attributes = array('id' => 'login_form', 'class' => 'login-form');?>
  <!-- Validation Area -->
@@ -29,46 +18,33 @@
 	<?php endif?>
 
 <center>
-	<!-- Start form -->
+<!-- Start form -->
 
 <div class="login-wrap">
 
-  <?php echo form_open('users/login', $attributes); ?>
+  <?php echo form_open('users/resetRequest', $attributes); ?>
 
 
 
 	<div class="input-group">
 		<?php
 //Input for Username
-echo form_label('Username: ');
+echo form_label('Email: ');
 $data = array(
 	'class' => 'form-control',
-	'name' => 'username',
-	'placeholder' => 'Enter Username',
+	'name' => 'email',
+	'placeholder' => 'Enter email',
 );
 echo form_input($data);
 ?>
 	</div>
-
-	<div class="input-group">
-		<?php
-//Input for password
-echo form_label('Password: ');
-$data = array(
-	'class' => 'form-control',
-	'name' => 'password',
-	'placeholder' => 'Enter Password',
-);
-echo form_password($data);
-?>
-	</div>
-	<p><span>Forgot Password<a href='<?php echo base_url(); ?>users/resetRequest'> Click here</a></span></p>
+	<hr>
 	<div class="form-group">
         <?php
 $data = array(
 	'class' => 'btn btn-primary',
 	'name' => 'submit',
-	'value' => 'Login',
+	'value' => 'Request for New Password',
 );
 echo form_submit($data);
 ?>

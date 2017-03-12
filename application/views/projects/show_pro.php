@@ -6,6 +6,17 @@
 <p><?php echo 'Hello ' . $this->session->userdata('username'); ?></p>
 <h2>Description: </h2>
 <p><?php echo $project_data->pro_body; ?></p>
+<h3>Tasks</h3>
+<?php if ($completed_tasks): ?>
+	<?php foreach ($completed_tasks as $task): ?>
+		<li><a href="<?php echo base_url(); ?>tasks/display/<?php echo $task->task_id; ?>">
+		<?php echo $task->task_name; ?>
+		</a></li>
+
+	<?php endforeach;?>
+<?php else: ?>
+	<p>You have no pending task</p>
+<?php endif;?>
 </div>
 <div class="col-xs-5 pull-right">
 	<h4>Project Actions</h4>
@@ -16,10 +27,10 @@
 
 </ul>
 </div>
-<div class="row">
+<!-- <div class="row">
 	<div>
 		<h4>Tasks:</h4><p><?php ?></p>
 		<p><h2>Task Description: </h2><br>
 		</p>
 	</div>
-</div>
+</div> -->

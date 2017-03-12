@@ -5,8 +5,9 @@
  <!-- Validation Area -->
 	<?php echo validation_errors("<p class ='bng-danger'>");
 ?>
-  <?php echo form_open('users/register', $attributes); ?>
-  <div id="firstname" class="form-group">
+<center>
+	  <?php echo form_open('users/register', $attributes); ?>
+  <div id="firstname" class="input-group">
   	<?php
 //Input for Username
 echo form_label('Firstname: ');
@@ -18,7 +19,7 @@ $data = array(
 echo form_input($data);
 ?>
   </div>
-  <div id="lastname" class="form-group">
+  <div id="lastname" class="input-group">
   	<?php
 echo form_label('Lastname: ');
 $data = array(
@@ -29,7 +30,7 @@ $data = array(
 echo form_input($data);
 ?>
   </div>
-  <div id="username" class="form-group">
+  <div id="username" class="input-group">
   	<?php
 echo form_label('Username: ');
 $data = array(
@@ -40,7 +41,7 @@ $data = array(
 echo form_input($data);
 ?>
   </div>
-  <div id="email" class="form-group">
+  <div id="email" class="input-group">
 <?php
 echo form_label('Email: ');
 $data = array(
@@ -51,7 +52,7 @@ $data = array(
 echo form_input($data);
 ?>
   </div>
-  <div class="form-group">
+  <div class="input-group">
 		<?php
 //Input for password
 echo form_label('Password: ');
@@ -64,7 +65,7 @@ echo form_password($data);
 ?>
 	</div>
 
-	<div class="form-group">
+	<div class="input-group">
         <?php
 //Input for confirm password
 echo form_label('Confirm Password:');
@@ -76,7 +77,7 @@ $data = array(
 echo form_password($data);
 ?>
 	</div>
-	<div class="form-group">
+	<div class="input-group">
         <?php
 $data = array(
 	'class' => 'btn btn-primary',
@@ -87,3 +88,5 @@ echo form_submit($data);
 ?>
     </div>
 	 <?php echo form_close(); ?>
+
+</center>

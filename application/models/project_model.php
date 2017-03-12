@@ -41,6 +41,28 @@ class project_model extends CI_Model {
 
 		return $get_data->row();
 	}
+	public function get_project_tasks($project_id, $active = true) {
+		$this->db->select('
+tasks.task_name,
+tasks.task_body,
+tasks.id as task_id,
+projects.pro_name,
+projects.pro_body,
+			');
+		$this->db->from('tasks');
+		$this->db->join('projects', 'projects.id = tasks.project_id');
+		$this->db->where('tasks.project_id', $project_id);
+		if ($active == true) {
+			$this->db->where('tasks.status', 0);
+		} else {
+			$this->db->where('tasks.status', 1);
+		}
+		$query = $this->db->get();
+		if ($query->num_rows() < 1) {
+			return FALSE;
+		}
+		return $query->result();
+	}
 }
 5
 ?>

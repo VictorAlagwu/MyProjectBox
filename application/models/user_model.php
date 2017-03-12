@@ -30,6 +30,16 @@ class User_model extends CI_Model {
 		}
 
 	}
+	public function send_reset($email, $data) {
+		$this->db->where('email', $email);
+		$this->db->update('users', $data);
+		return true;
+	}
+	public function check_email($email) {
+		$this->db->where("email", $email);
+		$query = $this->db->get('users');
+		return $query->result();
+	}
 
 }
 
