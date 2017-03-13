@@ -38,11 +38,7 @@ CREATE TABLE `projects` (
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`id`, `project_user_id`, `pro_name`, `pro_body`, `date_created`) VALUES
-(1, 2, 'PHP', 'Funtions and Declarations', '2017-02-25 13:12:19'),
-(2, 2, 'Laravel', 'This is a course on laravel', '2017-02-25 13:24:25'),
-(3, 2, 'Javascript', 'A colonized for javascript', '2017-02-25 13:37:03'),
-(4, 1, 'CSS', 'Testeing the stuffs using css', '2017-02-26 14:57:59');
+
 
 -- --------------------------------------------------------
 
@@ -64,11 +60,6 @@ CREATE TABLE `tasks` (
 -- Dumping data for table `tasks`
 --
 
-INSERT INTO `tasks` (`id`, `project_id`, `task_name`, `task_body`, `due_date`, `date_created`, `status`) VALUES
-(1, 2, '1st Task- Introduction', 'Introduction to laravel', '2015-08-12', '2017-02-25 13:25:59', 0),
-(2, 1, 'Introduction to PHP', 'Learning the basics of PHP', '2012-07-18', '2017-02-25 13:34:34', 0),
-(3, 2, '2nd Task- Datatypes and Variables', 'Learning about datatypes and varibles', '2017-03-12', '2017-03-12 15:49:12', 0),
-(4, 3, '1st Task- Introduction', 'Introduction to javascript', '2017-03-12', '2017-03-12 15:49:51', 0);
 
 -- --------------------------------------------------------
 
@@ -91,13 +82,6 @@ CREATE TABLE `users` (
 --
 -- Dumping data for table `users`
 --
-
-INSERT INTO `users` (`id`, `user_name`, `user_password`, `firstname`, `lastname`, `email`, `reg_date`, `resetToken`, `resetCompleted`) VALUES
-(1, 'Victor', '$2y$12$Wvfosc7nc5Hz3oJMn4ERLOLVIROLwJQ3MU9uh69THV/x.OIO8qO0u', 'Victor', 'Alagwu', 'victoralagwu@gmail.com', '2017-02-09 15:36:57', 'fcefe922dde508a2b34ba98af6894ed4', 'No'),
-(2, 'Demo', '$2y$12$dG2gUjCZGi3BYeqirC8XteUtq85Ou3ppbScjPZVLAaGQL3PYBXHGS', 'Demo', 'Demo', 'demo@gm.i', '2017-02-09 15:38:59', 'bbd35657243b4043a365bcc76ca256ff', 'No'),
-(3, 'Tester', '$2y$12$ZQiJre3hewKAl0oR9aENpO6rxMA6AXM8wU0ZS8qy4GGqAgwsizV7.', 'Tester', 'Test', 'tester@gmail.com', '2017-03-12 17:48:26', '', ''),
-(4, 'John', '$2y$12$q/WA.aLVFISC2yee6M9JM.5ZZjSJzIe9vhu2vp4UtngYi1Rhb/4fm', 'Johnpaul', 'Alagwu', 'johnpaul@gmail.com', '2017-03-12 17:55:36', '', ''),
-(5, 'asdadsd', '$2y$12$vOacVNUt1I8W0RhDeHVnHuAMtsvrDTlopC29zDNeA5wy6CLBoHWrC', 'asasddasd', 'adaddasd', 'asd@sdwsds.kjk', '2017-03-12 18:02:45', '', '');
 
 --
 -- Indexes for dumped tables
