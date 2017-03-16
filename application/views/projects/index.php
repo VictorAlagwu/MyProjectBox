@@ -6,6 +6,7 @@
 <?php if ($this->session->flashdata('pro_success')): ?>
 <?php echo $this->session->flashdata('pro_success'); ?>
 <?php endif;?>
+
 </p>
 <p class="bg-danger">
 <?php if ($this->session->flashdata('pro_deleted')): ?>

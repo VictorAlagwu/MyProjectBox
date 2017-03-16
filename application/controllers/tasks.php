@@ -56,11 +56,27 @@ class Tasks extends CI_Controller {
 				'due_date' => $this->input->post('due_date'),
 			);
 			if ($this->task_model->edit_task($task_id, $data)) {
-				$this->session->set_flashdata('pro_success', "<script> swal('Congrats','Task updated','success'); </script>");
+				// $this->session->set_flashdata('pro_success', "<script> swal('Congrats','Task updated','success'); </script>");
+				$this->session->set_flashdata('pro_success', "<script> alertify.success('Task updated successful'); </script>");
 				redirect('projects/index');
 			} else {
-				$this->session->set_flashdata('pro_success', "<script> swal('Sorry'.'Error creating Task','error'); </script>");
+				$this->session->set_flashdata('pro_success', "<script> alertify.error('Error creating Task'); </script>");
 			}
+		}
+	}
+	public function active($task_id) {
+		if ($this->task_model->change_to_active($task_id)) {
+			$project_id = $this->task_model->get_task_project_id($task_id);
+			$this->session->set_flashdata('task_active', "<script> alertify.success('Task still active'); </script>");
+			redirect('projects/display/' . $project_id . '');
+		}
+	}
+	public function completed($task_id) {
+		if ($this->task_model->complete_task($task_id)) {
+			$project_id = $this->task_model->get_task_project_id($task_id);
+			$this->session->set_flashdata('task_active', "<script> swal('Congrats','Task Completed','success'); </script>");
+			redirect('projects/display/' . $project_id . '');
+
 		}
 	}
 

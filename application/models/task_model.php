@@ -40,5 +40,18 @@ class Task_model extends CI_Model {
 		return $query->row();
 
 	}
+	public function complete_task($id) {
+		$this->db->set('status', 1);
+		$this->db->where('id', $id);
+		$this->db->update('tasks');
+		return true;
+
+	}
+	public function change_to_active($id) {
+		$this->db->set('status', 0);
+		$this->db->where('id', $id);
+		$this->db->update('tasks');
+		return true;
+	}
 }
 ?>

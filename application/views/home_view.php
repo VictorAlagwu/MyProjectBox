@@ -9,6 +9,7 @@
 <?php if ($this->session->flashdata('reg_success')): ?>
 <?php echo $this->session->flashdata('reg_success'); ?>
 <?php endif;?>
+
 </p>
 <p class="bg-danger">
 	<?php if ($this->session->flashdata('login_fail')): ?>

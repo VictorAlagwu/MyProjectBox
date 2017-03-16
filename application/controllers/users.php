@@ -54,6 +54,7 @@ class Users extends CI_Controller {
 				// echo $user_data;
 				$this->session->set_userdata($user_data);
 				$this->session->set_flashdata('login_success', "<script> swal('Wow','Welcome $username','success'); </script>");
+				// $this->session->set_flashdata('login_success', "<script> alertify.success('Welcome $username'); </script>");
 				redirect('home');
 				$data['main_view'] = "admin";
 				$this->load->view('layout/main', $data);

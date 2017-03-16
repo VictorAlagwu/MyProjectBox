@@ -18,6 +18,7 @@ class Projects extends CI_Controller {
 	}
 	public function display($project_id) {
 		$data['completed_tasks'] = $this->project_model->get_project_tasks($project_id, true);
+		$data['not_completed_tasks'] = $this->project_model->get_project_tasks($project_id, false);
 		$data['project_data'] = $this->project_model->get_project($project_id);
 		$data['main_view'] = "projects/show_pro";
 		$this->load->view('layout/main', $data);
@@ -58,7 +59,7 @@ class Projects extends CI_Controller {
 				'pro_body' => $this->input->post('projectbody'),
 			);
 			if ($this->project_model->edit_project($project_id, $data)) {
-				$this->session->set_flashdata('pro_updated', "<script> swal('Ok','Project Updated','success'); </script>");
+				$this->session->set_flashdata('pro_updated', "<script> alertify.success('Project Updated'); </script>");
 				redirect('projects/index');
 			}
 		}
