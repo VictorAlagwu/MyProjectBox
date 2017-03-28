@@ -5,7 +5,12 @@
  <!-- Validation Area -->
 	<?php echo validation_errors("<p class ='bng-danger'>");
 ?>
+
 <center>
+	<!-- Start form -->
+
+<div class="login-wrap">
+
 	  <?php echo form_open('users/register', $attributes); ?>
   <div id="firstname" class="input-group">
   	<?php
@@ -78,15 +83,10 @@ echo form_password($data);
 ?>
 	</div>
 	<div class="input-group">
-        <?php
-$data = array(
-	'class' => 'btn btn-primary',
-	'name' => 'submit',
-	'value' => 'Register',
-);
-echo form_submit($data);
-?>
-    </div>
+        <button type="submit" class="btn btn-default" name="btn-signup">
+    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Create Account
+			</button>
+	 </div>
 	 <?php echo form_close(); ?>
-
+</div>
 </center>

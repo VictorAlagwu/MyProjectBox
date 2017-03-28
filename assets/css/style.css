@@ -1,181 +1,112 @@
-/*/*login page*/
-
-/*.login-body {
-    background-color: #f1f2f7;
+body{
+       padding-top: 70px;
 }
-.login-img-body{
-  background: url('../img/bg-1.jpg') no-repeat center center fixed; 
+.rule{ 
+  background-image:url(../img/bg.jpg);
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  color: white;
 }
-.login-img2-body{
-  background: url('../img/bg-1.jpg') no-repeat center center fixed; 
+.wrap{
+    background-image:url(../img/bg.jpg);
+    background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
-}
-.login-img3-body{
-  background: url('../img/bg-1.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  text-align: center;
+  color: white;
+/*   padding-bottom: 90px;*/
 }
 
-.login-form {
-    max-width: 350px;
-    margin: 200px auto 0;
-    background: #d5d7de;    
+#main-menu{
+   background: transparent;
+   border-top: 3px solid transparent;
 }
-.login-img-body .login-form{
-    max-width: 350px;
-    margin: 200px auto 0;
-    background: rgba(213,215,222,0.4);
-    border: 1px solid #B0B6BE;
+.navbar.navbar-default {
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
 }
-.login-img2-body .login-form{
-    border: 1px solid #B0B6BE;
-    background: rgba(213,215,222,0.7);
+.navbar.navbar-default .navbar-toggle {
+  margin-top: 32px;
 }
-.login-img3-body .login-form{
-    border: 1px solid #B0B6BE;
-    background: rgba(213,215,222,0.9);
+.navbar-brand{
+ font-family:"Lucida Handwriting";
+    font-size: larger;
+       font-weight:lighter;
 }
-.login-form a{
-    color: #688a7e !important;
+@media only screen and (min-width: 768px) {
+  #main-menu.navbar-default {
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  #main-menu.navbar-default .navbar-nav > li > a {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  #main-menu.navbar-default .navbar-nav > li.active > a,
+  #main-menu.navbar-default .navbar-nav > li.open > a,
+  #main-menu.navbar-default .navbar-nav > li:hover > a {
+/*    background: transparent;
+    padding-top: 37px;
+    border-top: 3px solid #45aed6;*/
+  }
+  #main-menu.navbar-default .dropdown-menu {
+    padding: 0 20px;
+    min-width: 220px;
+    background-color: rgba(26, 28, 40, 0.9);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    background-clip: inherit;
+  }
+  #main-menu.navbar-default .dropdown-menu > li {
+    border-left: 3px solid transparent;
+    margin-left: -20px;
+    padding-left: 17px;
+    -webit-transition: border-color 400ms;
+    transition: border-color 400ms;
+  }
+  #main-menu.navbar-default .dropdown-menu > li > a {
+    border-top: 1px solid #404455;
+    padding: 15px 0;
+    color: #eeeeee;
+  }
+  #main-menu.navbar-default .dropdown-menu > li:first-child > a {
+    border-top: 0;
+  }
+  #main-menu.navbar-default .dropdown-menu > li.active,
+  #main-menu.navbar-default .dropdown-menu > li.open,
+  #main-menu.navbar-default .dropdown-menu > li:hover {
+    border-left-color: #45aed6;
+  }
+  #main-menu.navbar-default .dropdown-menu > li.active > a,
+  #main-menu.navbar-default .dropdown-menu > li.open > a,
+  #main-menu.navbar-default .dropdown-menu > li:hover > a {
+    color: #45aed6;
+    background-color: transparent;
+  }
 }
-.login-form h2.login-form-heading {
-    margin: 0;
-    padding:20px 15px;
-    text-align: center;
-    background: #34aadc;
-    border-radius: 5px 5px 0 0;
-    -webkit-border-radius: 5px 5px 0 0;
-    color: #fff;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-family: 'Lato', sans-serif;
-}
-
-.login-form .checkbox {
-    margin-bottom: 14px;
-}
-.login-form .checkbox {
-    font-weight: normal;    
-    font-weight: 300;
-    font-family: 'Lato', sans-serif;
-}
-.login-form .form-control {
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.login-form .form-control:focus {
-    z-index: 2;
-}
-.login-form .login-img{
-    font-size: 50px;
+.login-img {
+    padding: 20px;
+     text-align: center;
+      font-size: 50px;
     font-weight: 300;    
 }
-.login-form .input-group{
-    padding-bottom: 15px;
-}
-.login-form .input-group-addon{
-    padding: 6px 12px;
-    font-size: 16px;
-    color: #8b9199;
-    font-weight: normal;
-    line-height: 1;
-    text-align: center;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 0;
-}
-.login-form input[type="text"], .login-form input[type="password"] {    
+.login-wrap input[type="text"], .login-form input[type="password"] {    
     border: none;
     box-shadow: none;
     font-size: 16px;
     border-radius: 0; 
-}
-.login-form .btn{
-    border-radius: 0;
-}
-.login-form .btn-login {
-    background: #f67a6e;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-family: 'Lato', sans-serif;
-    box-shadow: 0 4px #e56b60;
-    margin-bottom: 20px;
-}
-
-.login-form p {
-    text-align: center;
-    color: #b6b6b6;
-    font-size: 16px;
-    font-weight: 300;
-}
-.login-img3-body .login-form p,.login-img2-body .login-form p {
-    color: #34aadc;
-}
-.login-form a {
-    color: #b6b6b6;
-}
-
-.login-form a:hover {
-    color: #34aadc;
-}
-.form .required{
-    font-size: 16px;
-    color: #00a0df;
-}
-
-.login-wrap {
-    padding: 20px;
-}
-
-.login-social-link  {
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
-
-.login-social-link a {
-    color: #fff;
-    padding: 15px 28px;
-    border-radius: 4px;
-}
-
-.login-social-link a:hover {
-    color: #fff;
-}
-
-.login-social-link a i {
-    font-size: 20px;
-    padding-right: 10px;
-}
-
-.login-social-link a.facebook {
-    background: #5193ea;
-    margin-right: 22px;
-    box-shadow: 0 4px #2775e2;
-	float:left;
-}
-
-.login-social-link a.twitter {
-    background: #44ccfe;
-    box-shadow: 0 4px #2bb4e8;
-	float:left;
-}*/
-.wrap{
-margin-left: 30px;
 }

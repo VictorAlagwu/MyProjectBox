@@ -21,7 +21,7 @@ class Projects extends CI_Controller {
 		$data['not_completed_tasks'] = $this->project_model->get_project_tasks($project_id, false);
 		$data['project_data'] = $this->project_model->get_project($project_id);
 		$data['main_view'] = "projects/show_pro";
-		$this->load->view('layout/main', $data);
+		$this->load->view('layout/index', $data);
 	}
 	public function create() {
 		$this->form_validation->set_rules('projectname', 'Project Name', 'trim|required|min_length[3]');

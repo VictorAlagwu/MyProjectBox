@@ -19,50 +19,26 @@
 
 <center>
 	<!-- Start form -->
-
 <div class="login-wrap">
+<form method="POST" action="">
+	<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="1">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="password" name="confirm_password" id="confirm_password" class="form-control input-lg" placeholder="Confirm Password" tabindex="1">
+							</div>
+						</div>
+					</div>
 
-  <?php echo form_open('users/resetPassword', $attributes); ?>
-
-
-
-	<div class="input-group">
-		<?php
-//Input for password
-echo form_label('New Password: ');
-$data = array(
-	'class' => 'form-control',
-	'name' => 'password',
-	'placeholder' => 'Enter Password',
-);
-echo form_password($data);
-?>
-	</div>
-	<div class="input-group">
-		<?php
-//Input for password
-echo form_label('Confirm Password: ');
-$data = array(
-	'class' => 'form-control',
-	'name' => 'confirm_password',
-	'placeholder' => 'Enter Password',
-);
-echo form_password($data);
-?>
-	</div>
-	<div class="form-group">
-        <?php
-$data = array(
-	'class' => 'btn btn-primary',
-	'name' => 'submit',
-	'value' => 'Change Password',
-);
-echo form_submit($data);
-?>
-    </div>
-
- <?php echo form_close(); ?>
-
+					<hr>
+					<div class="row">
+						<div class="col-xs-12 col-md-12"><input type="submit" name="submit" value="Change Password" class="btn btn-primary btn-block btn-lg" tabindex="1"></div>
+					</div>
+</form>
 <?php endif;?>
 </div>
 </center>

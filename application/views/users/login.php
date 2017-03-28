@@ -13,15 +13,14 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-			<
+
 			</div>
 		</div>
 
 	</div>
 </div>
 <!-- End of Modal -->
-<h2 class="text-center">Login Form</h2>
-
+  <p class="login-img"><i class="icon_lock_alt"></i></p>
 <?php $attributes = array('id' => 'login_form', 'class' => 'login-form');?>
  <!-- Validation Area -->
 	<?php if ($this->session->flashdata('errors')): ?>
@@ -64,15 +63,14 @@ echo form_password($data);
 	</div>
 	<p><span>Forgot Password<a href='<?php echo base_url(); ?>users/resetRequest'> Click here</a></span></p>
 	<div class="form-group">
-        <?php
-$data = array(
-	'class' => 'btn btn-primary',
-	'name' => 'submit',
-	'value' => 'Login',
-);
-echo form_submit($data);
-?>
+
+
     </div>
+<div class="form-group">
+            <button type="submit" class="btn btn-default" name="btn-login" id="btn-login">
+    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
+			</button>
+</div>
 
  <?php echo form_close(); ?>
 

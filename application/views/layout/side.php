@@ -60,12 +60,8 @@
 </nav>
 <div class="container">
     <div class="row">
-
-        <?php $this->load->view('users/login');?>
-
- <?php if ($this->session->userdata('logged_in')): ?>
         <?php $this->load->view($main_view);?>
-         <?php endif;?>
+
     </div>
 
 </div>

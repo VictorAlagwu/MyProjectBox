@@ -5,9 +5,15 @@
 class Tasks extends CI_Controller {
 //
 	public function display($task_id) {
-		$data['tasks'] = $this->task_model->get_tasks($task_id);
-		$data['main_view'] = 'tasks/display';
-		$this->load->view('layout/main', $data);
+
+		if ($data['tasks'] = $this->task_model->get_tasks($task_id)) {
+
+			$data['main_view'] = 'tasks/display';
+			$this->load->view('layout/main', $data);
+		} else {
+			$dat['main_view'] = 'tasks/error';
+			$this->load->view('layout/main', $dat);
+		}
 	}
 	public function create($project_id) {
 		$this->form_validation->set_rules('taskname', 'Task Name', 'trim|required|min_length[3]');
@@ -31,11 +37,7 @@ class Tasks extends CI_Controller {
 			}
 		}
 	}
-	public function delete($task_id) {
-		$data['tasks'] = $this->task_model->delete_task($task_id);
-		$this->session->set_flashdata('task_deleted', "<script> swal('Oohs','Task Deleted','error'); </script>");
-		redirect('home/index');
-	}
+
 	public function edit($task_id) {
 		$this->form_validation->set_rules('taskname', 'Task Name', 'trim|required|min_length[3]');
 		$this->form_validation->set_rules('taskbody', 'Task Body', 'trim|required|min_length[9]');
@@ -78,6 +80,11 @@ class Tasks extends CI_Controller {
 			redirect('projects/display/' . $project_id . '');
 
 		}
+	}
+	public function delete($id) {
+		$this->task_model->delete_task($id);
+		$this->session->set_flashdata('task_deleted', "<script> swal('Oops','Task Deleted','error'); </script>");
+		redirect('tasks/display');
 	}
 
 }

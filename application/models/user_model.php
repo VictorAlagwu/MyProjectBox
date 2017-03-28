@@ -40,6 +40,16 @@ class User_model extends CI_Model {
 		$query = $this->db->get('users');
 		return $query->result();
 	}
+	public function update_password($token, $data) {
+		$this->db->where("resetToken", $token);
+		$this->db->update('users', $data);
+		return true;
+	}
+	public function check_token($token) {
+		$this->db->where("resetToken", $token);
+		$query = $this->db->get('users');
+		return $query->result();
+	}
 
 }
 

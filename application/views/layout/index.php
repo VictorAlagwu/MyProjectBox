@@ -26,7 +26,7 @@
     .wrap{
     }
 </style>
-<body class="wrap">
+<body class="rule">
 <!-- Navigation -->
 <nav id="main-menu" class="navbar navbar- navbar-fixed-top">
     <div class="container">
@@ -58,15 +58,12 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-<div class="container">
-    <div class="row">
-
-        <?php $this->load->view('users/login');?>
-
- <?php if ($this->session->userdata('logged_in')): ?>
-        <?php $this->load->view($main_view);?>
-         <?php endif;?>
-    </div>
+<div class="container ">
+<div class="row main_content">
+   <?php if ($this->session->userdata('logged_in')): ?>
+      <?php $this->load->view($main_view);?>
+       <?php endif;?>
+</div>
 
 </div>
 <footer class="foo">

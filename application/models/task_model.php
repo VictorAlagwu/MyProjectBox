@@ -12,11 +12,7 @@ class Task_model extends CI_Model {
 		$data_input = $this->db->insert('tasks', $data);
 		return $data_input;
 	}
-	public function delete_task($id) {
-		$this->db->where('id', $id);
-		$this->db->delete('tasks');
 
-	}
 	public function edit_task($task_id, $data) {
 		$this->db->where('id', $task_id);
 		$this->db->update('tasks', $data);
@@ -52,6 +48,10 @@ class Task_model extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->update('tasks');
 		return true;
+	}
+	public function delete_task($id) {
+		$this->db->where('id', $id);
+		$this->db->delete('tasks');
 	}
 }
 ?>

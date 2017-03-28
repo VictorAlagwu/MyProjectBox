@@ -76,7 +76,7 @@ class Users extends CI_Controller {
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[2]');
 		if ($this->form_validation->run() == false) {
 			$data['main_view'] = 'users/reset';
-			$this->load->view('layout/main', $data);
+			$this->load->view('layout/side', $data);
 			$data = array(
 				'errors' => validation_errors(),
 			);
@@ -109,9 +109,28 @@ class Users extends CI_Controller {
 		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[3]|matches[password]');
 		if ($this->form_validation->run() == false) {
 			$data['main_view'] = 'users/resetPassword';
-			$this->load->view('layout/main', $data);
+			$this->load->view('layout/side', $data);
+
 		} else {
-			$token_link = $_GET['resetPassword'];
+			$token_link = $this->input->get('key', false);
+			$password = $this->input->post('password');
+			$time_pass = ['cost' => 12];
+			$hash_password = password_hash($password, PASSWORD_BCRYPT, $time_pass);
+			$data = array(
+				'user_password' => $hash_password,
+				'resetCompleted' => 'Yes',
+			);
+			$checktoken = $this->user_model->check_token($token_link);
+			if ($checktoken) {
+				$updatepassword = $this->user_model->update_password($token_link, $data);
+				$this->session->set_flashdata('login_fail', "<script> swal('Ok','Token have been sent to database','success'); </script>");
+				redirect('home/index');
+			} else {
+
+				$this->session->set_flashdata('login_fail', "<script> swal('Oops','Token not in our database','error'); </script>");
+				redirect('home/index');
+
+			}
 
 		}
 	}
