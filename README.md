@@ -9,17 +9,17 @@ MyProjectBox is a small scheduling or management web application that allow user
 # Features of the Site
 --------
 - **Project Page:** Allow you to view all the project you are working on.
-	![Home Screenshot](assets/img/errand_project.JPG "Home Page")
-	![Home Screenshot](assets/img/errand_project_delete.JPG "Home Page")
+	![Home Screenshot](assets/img/errand_project.JPG "Project Page")
+	![Home Screenshot](assets/img/errand_project_delete.JPG "Project Delete Page")
 - **Task Page:** Allow you to view the different tasks
-	![Home Screenshot](assets/img/errand_tasks_display.JPG "Home Page")
+	![Home Screenshot](assets/img/errand_tasks_display.JPG "Task Page")
 - **Registration Page:** Allows Users to register
 - **Local Authentication** using either Username or Email, and Password
 	![Home Screenshot](assets/img/errand_login.JPG "Home Page")
 - **Recover Password Page** allows users to recover their password if forgotten.
-	![Home Screenshot](assets/img/errand_recover_password1.JPG "Home Page")
-	![Home Screenshot](assets/img/errand_recover_password2.JPG "Home Page")
-	![Home Screenshot](assets/img/errand_change_password.JPG "Home Page")
+	![Home Screenshot](assets/img/errand_recover_password1.JPG "Recover Password")
+	![Home Screenshot](assets/img/errand_recover_password2.JPG "Recover Password")
+	![Home Screenshot](assets/img/errand_change_paassword.JPG "Change Password")
 - **The Use of Password Hashing**
 - **Time feature:** I know it is not big deal :wink:,but i just feel like writing this down. :innocent:
 
