@@ -22,7 +22,7 @@
 					<input type="text" name="projectname" id="projectname" value="<?php echo $project_data->pro_name; ?>" class="form-control" />
 					<br/>
 					<label>Enter Project Body</label>
-					<textarea id="projectbody" name="projectbody" placeholder="<?php echo $project_data->pro_body; ?>" value="<?php echo $project_data->pro_body; ?>" class="form-control"></textarea>
+					<textarea id="projectbody" name="projectbody"  class="form-control"><?php echo htmlspecialchars($project_data->pro_body); ?></textarea>
 					<br/>
 
 				</div>
